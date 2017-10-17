@@ -1,0 +1,57 @@
+﻿@model List<darktierstudios.Models.Project>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="full_div">
+    <!--full.div.start-->
+    <div class="wrapper">
+        <!--wrapper.start-->
+        <div id="slider-wrap2">
+            <!--slider-wrap2.start-->
+            <div class="flexslider">
+                <!--flexslider.start-->
+                <ul class="slides">
+                    <!--slides.start-->
+                    <li>
+                        <img src="~/Content/images/slider/castle.jpg" alt="slide" />
+                        <p class="flex-caption">Brave the perils of a long abandoned castle.</p>
+                    </li>
+                    <li>
+                        <img src="~/Content/images/slider/monastry_rock.jpg" alt="slide" />
+                        <p class="flex-caption">Explore the wilds of fantastical locations.</p>
+                    </li>
+                    <li>
+                        <img src="~/Content/images/slider/greek_temple.jpg" alt="slide" />
+                        <p class="flex-caption">Delve into the depths of an ancient dungeon.</p>
+                    </li>
+                    <li>
+                        <img src="~/Content/images/slider/hilltop_monastary.jpg" alt="slide" />
+                        <p class="flex-caption">Become an emissary to distant lands.</p>
+                    </li>
+                    <li>
+                        <img src="~/Content/images/slider/pillars.jpg" alt="slide" />
+                        <p class="flex-caption">Seek ancient knowledge in a hidden ruin.</p>
+                    </li>
+
+                </ul><!--slides.end-->
+            </div><!--flexslider.end-->
+        </div><!--slider-wrap2.end-->
+
+    </div><!--.wrapper end-->
+</div><!--full.div.end-->
+
+<!--.wrapper start--><div class="wrapper">
+    <!--RECENT WORKS start-->
+    <div class="title">
+        <!--.title start-->
+        Darktier Studios specializes in tabletop and roleplaying games and tools.
+    </div><!--.title end-->
+
+    <p class="text">Many of our games are free! Download them and play them, or use bits and pieces. We would just appreciate some props if you use a part of one of our games in your own. Some of these are still in progress so what you see is what you get. We hope you enjoy them.</p>
+    
+    @Html.Partial("_ProjectList", Model)
+</div><!--.wrapper end-->
+

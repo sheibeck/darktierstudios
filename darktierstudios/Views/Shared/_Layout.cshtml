@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Roleplaying and table-top game maker located in Grand Rapids, MI." />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="keywords" content="rpg,roleplaying,board games,games,d&d,dungeons and dragons,fate,dice,roleplay,table-top,table top" />
+
+    <title>@ViewBag.Title - Darktier Studios</title>
+    <link href="~/css/flexslider.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/superfish.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Anton|PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+    <link href="~/Content/images/favicon.png" type="image/x-icon" rel="shortcut icon" />
+    <link href="~/Content/images/favicon.png" type="image/x-icon" rel="icon" /> 
+
+    <script type="text/javascript" src="~/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="~/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="~/js/superfish.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+	 	$(function(){
+			$('ul.sf-menu').superfish();
+		
+
+		    $(".slidingDiv").hide();
+	        $(".show_hide").show();
+
+	        $('.show_hide').click(function(){
+	            $(".slidingDiv").slideToggle();
+	        });
+
+	        $("a[rel^='prettyPhoto']").prettyPhoto({
+			    theme: 'dark_rounded',
+			    social_tools: false,
+		    });
+
+		    $(window).load(function() {
+                $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,
+            });});
+	  });
+    </script>
+
+  
+</head>
+<body>
+    <div id="bar">
+        <!--bar.start-->
+        <div class="wrapper">
+            <!--wrapper.start-->
+
+            <div id="logo">
+                <a href="/"><img src="~/images/logo.png" width="200" height="40" alt="Darktier Studios" /></a>
+            </div>
+            <!--The menu is strar's here-->
+            <div class="accordion vertical">
+                <!--accordion-vert.start-->
+                <ul>
+                    <li>
+                        <input type="checkbox" id="checkbox-1" name="checkbox-accordion" />
+                        <label for="checkbox-1"><img src="~/images/menub.png" alt="menu" /></label>
+                        <div class="content">
+
+
+                            <ul class="sf-menu">
+                                <!--sf-menu.start-->
+                                <li>
+                                    <a href="/">home</a>
+                                </li>
+                                <li>
+                                    <a href="#">games</a>
+                                    <!--
+                                    <ul>
+                                        <li><a href="blog.html">Blog idnex layot</a></li>
+                                        <li><a href="blog-item.html">Blog item</a></li>
+                                    </ul>-->
+                                </li>
+                                <li>
+                                    <a href="/blog">Blog</a>
+                                </li>
+                            </ul>
+                        </div><!--sf-menu.end-->
+                    </li>
+                </ul>
+            </div><!--accordion-vert.end-->
+            <!--The menu is end's here-->
+
+        </div><!--wrapper.end-->
+    </div><!--bar.end-->
+
+    @RenderBody()
+
+    <!--FOOTER start-->
+
+    <div class="full_div">
+        <!--.full_div start-->
+        <div class="wrapper">
+            <!--.wrapper start-->
+
+            <div class="of-grid">
+                <!--.of grid start-->
+                <div class="titlefot">
+                    <!--.title start-->
+                    About Darktier Studios
+                </div><!--.title end-->
+                <p class="textfot">
+                    <!--.textfot start-->
+                    Darktier Studios is located in Grand Rapids, MI. We create roleplaying Games, roleplaying game supplements, table-top games and game related tools on the web. This is a part-time gig and we do it for the love of gaming. Sitting down at the table with your friends and family is a great way to build relationships and learn valuable skills that apply to all areas of life.
+                </p><!--.textfot end-->
+            </div><!--.of grid end-->
+
+            <div class="of-grid">
+                <!--.of grid start-->
+                <div class="titlefot">
+                    <!--.title start-->
+                    Get in touch
+                </div><!--.title end-->
+                <p class="textfot">
+                   Email us @@ <a href="mailto:darktierstudios@gmail.com">darktierstudios@gmail.com</a>
+                </p>
+            </div><!--.of grid end-->
+        </div><!--.wrapper end-->
+    </div><!--.full_div end-->
+    <!--.wrapper start--><div class="wrapper">
+        <p class="end">
+            Copyright @DateTime.Now.Year Darktier Studios, LLC.<br />
+        </p>
+        <p class="soc">
+            <a href="http://www.facebook.com/pages/Darktier-Studios/224068277733946"><img src="~/images/fb.png" width="15" height="15" alt="Facebook" />Facebook</a>
+        </p>
+        <p class="soc">
+            <a href="https://plus.google.com/u/0/b/112683507109956397265/112683507109956397265"><img src="~/images/gplus.png" width="15" height="15" alt="Google" />Google +</a>
+        </p>
+        <p class="soc">
+            <a href="https://twitter.com/DarktierStudios"><img src="~/images/tw.png" width="15" height="15" alt="Twitter" />Twitter</a>
+        </p>
+    </div><!--.wrapper end-->
+   
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59e64227ebb4b786"></script> 
+</body>
+</html>
+
+@RenderSection("scripts", required: false)
