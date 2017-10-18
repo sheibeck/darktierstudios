@@ -315,7 +315,7 @@ width:1000px;
 
 .recent {
    width: 310px;
-   height: 200px;
+   height: auto;
    margin: 10px 5px 0 5px;
    float: left;
    overflow: hidden;
@@ -327,7 +327,7 @@ width:1000px;
 
 
 .recent .mask,.recent .content {
-   width: 310px;
+   width: 96%;
    height: 200px;
    position: absolute;
    overflow: hidden;
@@ -337,6 +337,8 @@ width:1000px;
 .recent img {
    display: block;
    position: relative;
+   max-height: 200px;
+   width: 96%;
 }
 
 .recent p {

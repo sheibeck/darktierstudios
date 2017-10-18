@@ -10,18 +10,24 @@ using darktierstudios.Models;
 
 namespace darktierstudios.Controllers
 {
-    public class ProjectController : Controller
+    public class GameController : Controller
     {
         private DarktierStudiosDbContext db = new DarktierStudiosDbContext();
 
-        // GET: Project/Details/5
-        public ActionResult Details(Guid? id)
+        // GET: Game        
+        public ActionResult List()
+        {           
+            return View(db.Project.OrderByDescending(p => p.ProjectDate).ToList());
+        }
+
+        // GET: Game/Details/5
+        public ActionResult Details(string slug)
         {
-            if (id == null)
+            if (slug == null || slug == "list")
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("list", "game");
             }
-            Project project = db.Project.Find(id);
+            Project project = db.Project.Where( p => p.Slug == slug).FirstOrDefault();
             if (project == null)
             {
                 return HttpNotFound();

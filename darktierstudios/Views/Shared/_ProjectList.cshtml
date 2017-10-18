@@ -1,14 +1,22 @@
 ﻿@model List<darktierstudios.Models.Project>
 
-@foreach(var proj in Model)
+@foreach (var proj in Model)
 {
-<div class="recent recent-work">
-    <!--.recent start-->
-    <img src="~/Content/images/projects/@proj.Image" alt="@proj.Name Image" />
-    <div class="mask">
-        <!--.mask start-->
-        <p>@proj.Synopsis</p>
-        <a href="~/Project/Details/@proj.Id" class="info">Read More</a>
-    </div><!--.mask end-->
-</div><!--.recent end-->
+    <div class="tr-blog">
+        <!--.title start-->
+        <div class="title-b">
+            @proj.Name
+        </div><!--.title end-->
+
+        <div class="recent recent-work">
+            <!--.recent start-->
+            <img src="~/Content/images/projects/@proj.Image" alt="@proj.Name Image" />
+            <div class="mask">
+                <!--.mask start-->
+                <p>@proj.Synopsis</p>
+                <a href="~/game/@proj.Slug" class="info">Read More</a>
+            </div><!--.mask end-->
+        </div><!--.recent end-->
+           
+    </div> 
 }

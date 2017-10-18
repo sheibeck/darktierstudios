@@ -1,0 +1,17 @@
+﻿@model IEnumerable<darktierstudios.Models.Project>
+
+@{
+    ViewBag.Title = "Game List";    
+}
+
+<div class="wrapper">
+    <div class="title-g">
+        <!--.title start-->
+        RPG & TableTop Games<br />
+
+        <span class="quotes">check out our stuff</span>
+    </div><!--.title end-->
+    
+    @Html.Partial("_ProjectList", Model)
+    
+ </div>

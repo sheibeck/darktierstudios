@@ -16,7 +16,7 @@
             @(Model.Incomplete ? "* This project is not complete." : "")
             @(Model.InDevelopment ? "* This project is currently in development." : "")
 
-            @if (Model.TheGameCrafterApiID != null)
+            @if (Model.TheGameCrafterApiID != Guid.Empty)
             {
                 <div class="text">
                     <form id="form-@Model.Name" action="https://www.thegamecrafter.com/cart/sku/@(Model.TheGameCrafterCartID)">
@@ -26,7 +26,7 @@
             }
 
             <div class="text js-project-desc">
-                @Model.Description
+                @Html.Raw(Model.Description)
             </div>
             <div class="text js-designer-desc">
                 <b>Author(s):</b>&nbsp;@Model.Author

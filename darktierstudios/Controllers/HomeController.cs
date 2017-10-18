@@ -13,7 +13,7 @@ namespace darktierstudios.Controllers
 
         public ActionResult Index()
         {
-            var model = db.Project.ToList();
+            var model = db.Project.OrderByDescending(p => p.ProjectDate).Take(3).ToList();
 
             return View(model);
         }

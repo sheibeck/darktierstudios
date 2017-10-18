@@ -19,6 +19,10 @@ namespace darktierstudios.Models
 
         [MaxLength(150)]
         [Required]
+        public string Slug { get; set; }
+
+        [MaxLength(150)]
+        [Required]
         public string Author { get; set; }
 
         [MaxLength(250)]
@@ -34,11 +38,13 @@ namespace darktierstudios.Models
         public string Rulebook { get; set; }
         public string Charactersheet { get; set; }
         public string Document { get; set; }
-
+        
         public Guid TheGameCrafterApiID { get; set; }
         public Guid TheGameCrafterCartID { get; set; }
 
         public bool InDevelopment { get; set; }
         public bool Incomplete { get; set; }
+
+        public DateTime ProjectDate { get; set; }
     }
 }

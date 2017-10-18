@@ -13,6 +13,20 @@ namespace darktierstudios
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.LowercaseUrls = true;
+
+            routes.MapRoute(
+                name: "Game_List",
+                url: "Game/List/{id}",
+                defaults: new { controller = "Game", action = "List", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Game",
+                url: "Game/{slug}",
+                defaults: new { controller = "Game", action = "Details", slug = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

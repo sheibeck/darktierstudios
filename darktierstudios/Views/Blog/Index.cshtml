@@ -15,7 +15,7 @@
         </span>
     </div><!--.title end-->
 
-    <div class="s-grid">
+    <div class="">
 
         @foreach (var post in ViewBag.BlogPosts)
         {
@@ -28,7 +28,7 @@
                 <img src="@post.Image" alt="image" width="100%">
                 <div class="mask">
                     <!--.mask start-->
-                    <p>@post.Title</p>
+                    <p>@Html.Raw(post.Summary)</p>
                     <a href="@post.Uri" class="info">Read More</a>
                 </div><!--.mask end-->
             </div>

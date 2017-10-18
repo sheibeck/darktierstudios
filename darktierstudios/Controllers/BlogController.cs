@@ -12,7 +12,7 @@ namespace darktierstudios.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        [OutputCache(Duration = 86400, VaryByParam = "none")] // cache for 24 hours
+        //[OutputCache(Duration = 86400, VaryByParam = "none")] // cache for 24 hours
         public ActionResult Index()
         {
             string url = "https://sterlingheibeck.wordpress.com/feed";
