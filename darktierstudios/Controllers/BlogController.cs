@@ -15,12 +15,12 @@ namespace darktierstudios.Controllers
         //[OutputCache(Duration = 86400, VaryByParam = "none")] // cache for 24 hours
         public ActionResult Index()
         {
-            string url = "https://sterlingheibeck.wordpress.com/feed";
+            string url = "https://sterlingheibeck.wordpress.com/category/darktierstudios/feed";
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             reader.Close();
 
-            var recentPosts = feed.Items.Where( f => f.Categories.Any( c => c.Name == "darktierstudios") ).Take(5);
+            var recentPosts = feed.Items.Take(5);
 
             var blogItemList = new List<BlogItem>();
             foreach(var post in recentPosts)
@@ -31,7 +31,7 @@ namespace darktierstudios.Controllers
                     Image = post.ElementExtensions.Where(p => p.OuterName == "thumbnail").First().GetObject<XElement>().Attribute("url").Value,
                     Title = post.Title.Text,
                     Uri = post.Links[0].Uri.AbsoluteUri,
-                    Summary = post.Summary.Text.Substring(0,350) + "...",
+                    Summary = post.Summary.Text,
                     PublishDate = post.PublishDate.LocalDateTime.ToShortDateString()
                 };
                 
