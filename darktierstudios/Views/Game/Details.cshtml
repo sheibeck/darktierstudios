@@ -18,7 +18,7 @@
             @if (Model.TheGameCrafterApiID != Guid.Empty)
             {
                 <div class="text">
-                    <form id="form-@Model.Name" action="https://www.thegamecrafter.com/cart/sku/@(Model.TheGameCrafterCartID)">
+                    <form id="form-@Model.Name" action="https://www.thegamecrafter.com/cart/sku/@(Model.TheGameCrafterCartID)" method="post">
                         <button style="font-family:PT Sans Narrow;background-image:url('/images/icons/shoppingcart.png');background-repeat:no-repeat;background-position:left;padding-left:25px;">Buy @Model.Name</button>
                     </form>
                 </div>
