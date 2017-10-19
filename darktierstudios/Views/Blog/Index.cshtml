@@ -4,21 +4,19 @@
     ViewBag.Title = "Blog";
 }
 
-<div class="wrapper">
+
     <!--.wrapper start-->
     <div class="title-g">
         <!--.title start-->
         Be creative, play games
         <br><span class="quotes">
             our blog
-
         </span>
     </div><!--.title end-->
 
-    <div class="">
-
-        @foreach (var post in ViewBag.BlogPosts)
-        {
+    @foreach (var post in ViewBag.BlogPosts)
+    {
+        <div class="">
             <div class="title-b">
                 <a href="@post.Uri">@post.Title</a><br>
                 <span class="blogtxt">Added by @post.Authors on @post.PublishDate</span>
@@ -32,7 +30,8 @@
                     <a href="@post.Uri" class="info">Read More</a>
                 </div><!--.mask end-->
             </div>
-        }
-    </div>
-</div>
+        </div>
+    }
+
+
 
