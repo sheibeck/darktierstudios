@@ -20,8 +20,10 @@ namespace darktierstudios.Controllers
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             reader.Close();
 
+            var recentPosts = feed.Items.Where( f => f.Categories.Any( c => c.Name == "darktierstudios") ).Take(5);
+
             var blogItemList = new List<BlogItem>();
-            foreach(var post in feed.Items)
+            foreach(var post in recentPosts)
             {
                 var blogPost = new BlogItem()
                 {
@@ -29,7 +31,7 @@ namespace darktierstudios.Controllers
                     Image = post.ElementExtensions.Where(p => p.OuterName == "thumbnail").First().GetObject<XElement>().Attribute("url").Value,
                     Title = post.Title.Text,
                     Uri = post.Links[0].Uri.AbsoluteUri,
-                    Summary = post.Summary.Text,
+                    Summary = post.Summary.Text.Substring(0,350) + "...",
                     PublishDate = post.PublishDate.LocalDateTime.ToShortDateString()
                 };
                 
