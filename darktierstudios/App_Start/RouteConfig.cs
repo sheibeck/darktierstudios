@@ -16,15 +16,15 @@ namespace darktierstudios
             routes.LowercaseUrls = true;
 
             routes.MapRoute(
-                name: "Game_List",
-                url: "Game/List/{id}",
-                defaults: new { controller = "Game", action = "List", id = UrlParameter.Optional }
+                name: "Games_List",
+                url: "Games/List/{id}",
+                defaults: new { controller = "Games", action = "List", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Game",
-                url: "Game/{slug}",
-                defaults: new { controller = "Game", action = "Details", slug = UrlParameter.Optional }
+                name: "Games",
+                url: "Games/{slug}",
+                defaults: new { controller = "Games", action = "Details", slug = UrlParameter.Optional }
             );
 
             routes.MapRoute(
